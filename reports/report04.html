@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>과제3_2</title>
+</head>
+<script>
+function new_row(n) {
+  var pascal = [];
+  var idx = 0;
+
+  for ( var i = 0; i < n; i++ ) {
+    idx = pascal.length - i;
+    for ( var j = 0; j < i+1; j++ )
+      if ( j === 0 || j === i )
+        pascal.push(1);
+      else
+        pascal.push( pascal[ idx+j ] + pascal[ idx+j-1 ]);
+  }
+  return pascal;
+}
+</script>
+<body>
+<h3>파스칼 삼각형</h3><hr>
+<script>
+    var n = prompt("숫자입력");
+    document.write(new_row(n));
+</script>
+</body>
+</html>
