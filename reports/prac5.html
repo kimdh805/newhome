@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>연습5</title>
+    <script>
+        function say_hello() {
+            var name = document.getElementById("name").value;
+            var message = "<h2>Hello " + name + "!</h2>";
+
+            document.getElementById("content").innerHTML = message;
+
+            if (name === "student") {
+                var title = document.getElementById("title").innerHTML ;
+                title += "& Loving it!";
+                document.querySelector("#title").textContent = title;
+            }
+        }
+    </script>
+</head>
+<body>
+<h1 id="title">DOM 객체 액세스 - say hello</h1>
+<p>
+Say hello to
+<input type="text" id="name">
+<button onclick="say_hello()">Say</button>
+</p>
+<div id="content"></div>
+<script src="js/script.js">
+</script>
+
+</body>
+</html>
